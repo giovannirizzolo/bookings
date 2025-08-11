@@ -2,15 +2,15 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/giovannirizzolo/bookings/internal/http"
+	"github.com/giovannirizzolo/bookings/internal/adapters/gin"
 )
 
-func main(){
+func main() {
 	r := gin.Default()
 
 	routes := r.Group("/api")
 	{
-		routes.GET("/healthz", getHealth)
+		routes.GET("/healthz", http.GetHealth)
 	}
 	r.Run(":8080")
 }
